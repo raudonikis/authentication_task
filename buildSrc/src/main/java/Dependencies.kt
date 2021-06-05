@@ -10,6 +10,9 @@ object Versions {
     //UI
     const val material = "1.3.0"
 
+    //DI
+    const val dagger = "2.36"
+
     // Network
     const val retrofit = "2.9.0"
     const val moshi = "1.12.0"
@@ -38,6 +41,12 @@ object Dependencies {
     //UI
     const val material = "com.google.android.material:material:${Versions.material}"
 
+
+    // DI
+    const val daggerHilt = "com.google.dagger:hilt-android:${Versions.dagger}"
+    const val daggerCompiler = "com.google.dagger:hilt-android-compiler:${Versions.dagger}"
+    const val daggerHiltPlugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.dagger}"
+
     //Network
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val moshi = "com.squareup.moshi:moshi-kotlin:${Versions.moshi}"
@@ -52,4 +61,8 @@ object Dependencies {
 
     //Plugins
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
+}
+
+object Modules {
+    const val network = ":network"
 }

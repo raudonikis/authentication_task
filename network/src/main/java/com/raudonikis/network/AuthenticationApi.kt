@@ -15,4 +15,8 @@ interface AuthenticationApi {
 
     @GET("user")
     suspend fun getUser(): NetworkResponse<UserResponse, Unit>
+
+    companion object {
+        const val baseUrl = "https://vidqjclbhmef.herokuapp.com/"
+    }
 }
