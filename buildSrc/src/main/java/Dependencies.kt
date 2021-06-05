@@ -34,6 +34,9 @@ object Versions {
     const val compileSdk = 30
     const val minSdk = 21
     const val targetSdk = 30
+
+    // JWT token
+    const val jwtToken = "2.0.0"
 }
 
 object Dependencies {
@@ -78,6 +81,9 @@ object Dependencies {
 
     //Plugins
     const val hiltGradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.dagger}"
+
+    // JWT token
+    const val jwtToken = "com.auth0.android:jwtdecode:${Versions.jwtToken}"
 }
 
 object Modules {
@@ -85,6 +91,7 @@ object Modules {
     const val navigation = ":navigation"
     const val common = ":common"
     const val common_ui = ":common-ui"
+    const val data_domain = ":data-domain"
 
     object Features {
         const val login = ":features:login"

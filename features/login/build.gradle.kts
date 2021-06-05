@@ -15,6 +15,7 @@ dependencies {
     implementation(project(Modules.common))
     implementation(project(Modules.common_ui))
     implementation(project(Modules.network))
+    implementation(project(Modules.data_domain))
     //DI
     implementation(Dependencies.daggerHilt)
     kapt(Dependencies.daggerCompiler)

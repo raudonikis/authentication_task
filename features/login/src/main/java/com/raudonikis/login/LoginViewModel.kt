@@ -26,10 +26,14 @@ class LoginViewModel @Inject constructor(
     /**
      * Events
      */
-    fun onSubmitClicked() {
+    fun onSubmitClicked(username: String?, password: String?) {
         viewModelScope.launch {
+            if (username.isNullOrBlank() || password.isNullOrBlank()) {
+                _loginEvent.emit(LoginEvent.Failure)
+                return@launch
+            }
             _loginEvent.emit(LoginEvent.Loading)
-            loginUseCase.login("", "")
+            loginUseCase.login(username, password)
                 .onSuccess {
                     _loginEvent.emit(LoginEvent.Success)
                     navigateToProfile()

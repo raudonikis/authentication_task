@@ -6,8 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import com.raudonikis.common_ui.enableIf
+import com.raudonikis.common_ui.showIf
+import com.raudonikis.common_ui.showLongSnackbar
 import com.raudonikis.login.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.onEach
 
 @AndroidEntryPoint
 class LoginFragment : Fragment(R.layout.fragment_login) {
@@ -27,6 +33,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setUpObservers()
         setUpListeners()
     }
 
@@ -36,12 +43,30 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     }
 
     private fun setUpListeners() {
-        binding.buttonSubmit.setOnClickListener {
-            viewModel.onSubmitClicked()
+        binding.apply {
+            buttonSubmit.setOnClickListener {
+                val username = textUsername.editText?.text.toString()
+                val password = textPassword.editText?.text.toString()
+                viewModel.onSubmitClicked(username, password)
+            }
         }
     }
 
     private fun setUpObservers() {
+        lifecycleScope.launchWhenCreated {
+            viewModel.loginEvent
+                .onEach { onLoginEvent(it) }
+                .collect()
+        }
+    }
 
+    private fun onLoginEvent(event: LoginEvent) {
+        binding.apply {
+            progressLogin.showIf { event is LoginEvent.Loading }
+            buttonSubmit.enableIf { event !is LoginEvent.Loading }
+            if (event is LoginEvent.Failure) {
+                showLongSnackbar("Failed to login")
+            }
+        }
     }
 }
