@@ -1,6 +1,7 @@
 object Versions {
 
     const val kotlin = "1.5.0"
+    const val coroutines = "1.5.0"
 
     //Androidx
     const val androidx = "1.5.0"
@@ -37,7 +38,10 @@ object Versions {
 
 object Dependencies {
 
+    //Kotlin
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
+    const val kotlinCoroutines =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
 
     //Androidx
     const val androidx = "androidx.core:core-ktx:${Versions.androidx}"

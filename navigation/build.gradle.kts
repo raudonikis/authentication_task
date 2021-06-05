@@ -5,6 +5,8 @@ plugins {
 }
 
 dependencies {
+    //Kotlin
+    implementation(Dependencies.kotlinCoroutines)
     //Navigation
     api(Dependencies.navigationFragment)
     api(Dependencies.navigationUi)
