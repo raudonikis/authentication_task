@@ -10,8 +10,9 @@ buildscript {
     }
     dependencies {
         classpath("com.android.tools.build:gradle:4.2.1")
-        classpath(Dependencies.kotlinGradlePlugin)
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
+        // Hilt
+        classpath(Dependencies.hiltGradlePlugin)
     }
 }
 

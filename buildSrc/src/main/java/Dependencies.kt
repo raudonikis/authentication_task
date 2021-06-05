@@ -13,6 +13,9 @@ object Versions {
     //DI
     const val dagger = "2.36"
 
+    // Logging
+    const val timber = "4.7.1"
+
     // Network
     const val retrofit = "2.9.0"
     const val moshi = "1.12.0"
@@ -45,7 +48,12 @@ object Dependencies {
     // DI
     const val daggerHilt = "com.google.dagger:hilt-android:${Versions.dagger}"
     const val daggerCompiler = "com.google.dagger:hilt-android-compiler:${Versions.dagger}"
-    const val daggerHiltPlugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.dagger}"
+    /*const val hiltLifecycle = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltLifecycle}"
+    const val hiltLifecycleCompiler = "androidx.hilt:hilt-compiler:${Versions.hiltAndroidx}"
+    const val hiltNavigation = "androidx.hilt:hilt-navigation-fragment:${Versions.hiltAndroidx}"*/
+
+    // Logging
+    const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
 
     //Network
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
@@ -60,7 +68,7 @@ object Dependencies {
     const val junit = "junit:junit:${Versions.junit}"
 
     //Plugins
-    const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
+    const val hiltGradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.dagger}"
 }
 
 object Modules {
