@@ -1,3 +1,5 @@
 rootProject.name = "authentication_task"
 include ':app'
 include ':network'
+include ':features:login'
+include ':features:profile'

@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import com.android.build.gradle.BaseExtension
 
 buildscript {
+    val kotlin_version by extra("1.5.0")
     repositories {
         google()
         mavenCentral()
@@ -10,6 +11,7 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:4.2.1")
         classpath(Dependencies.kotlinGradlePlugin)
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
     }
 }
 
