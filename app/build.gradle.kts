@@ -20,6 +20,12 @@ android {
             )
         }
     }
+    hilt {
+        enableExperimentalClasspathAggregation = true
+    }
+    lintOptions {
+        isCheckReleaseBuilds = false
+    }
 }
 
 dependencies {

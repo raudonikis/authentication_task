@@ -1,4 +1,4 @@
-package com.raudonikis.login
+package com.raudonikis.profile
 
 import androidx.lifecycle.ViewModel
 import com.raudonikis.navigation.NavigationDispatcher
@@ -7,14 +7,14 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel @Inject constructor(
+class ProfileViewModel @Inject constructor(
     private val navigationDispatcher: NavigationDispatcher,
 ) : ViewModel() {
 
     /**
      * Events
      */
-    fun onSubmitClicked() {
-        navigationDispatcher.navigate(NavigationGraph.Profile)
+    fun onLogoutClicked() {
+        navigationDispatcher.navigate(NavigationGraph.Login)
     }
 }

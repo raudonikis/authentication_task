@@ -16,9 +16,6 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
-    /**
-     * Lifecycle hooks
-     */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -38,9 +35,6 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         _binding = null
     }
 
-    /**
-     * Set up
-     */
     private fun setUpListeners() {
         binding.buttonSubmit.setOnClickListener {
             viewModel.onSubmitClicked()

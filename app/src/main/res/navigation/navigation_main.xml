@@ -6,4 +6,16 @@
 
     <include app:graph="@navigation/navigation_login" />
     <include app:graph="@navigation/navigation_profile" />
+
+    <action
+        android:id="@+id/action_global_navigation_profile"
+        app:destination="@id/navigation_profile"
+        app:popUpTo="@id/navigation_main"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_global_navigation_login"
+        app:destination="@id/navigation_login"
+        app:popUpTo="@id/navigation_main"
+        app:popUpToInclusive="true" />
 </navigation>
