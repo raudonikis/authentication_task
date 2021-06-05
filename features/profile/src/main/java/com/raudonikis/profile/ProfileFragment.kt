@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
 import com.raudonikis.common.Result
+import com.raudonikis.common_ui.showIf
 import com.raudonikis.common_ui.showLongSnackbar
 import com.raudonikis.data_domain.user.User
 import com.raudonikis.profile.databinding.FragmentProfileBinding
@@ -58,10 +60,16 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     private fun onUserUpdate(userUpdate: Result<User>) {
         binding.apply {
+            progressUser.showIf { userUpdate is Result.Loading }
             userUpdate.onSuccess { user ->
                 textAddress.text = user.address
                 textPhone.text = user.phone
                 textUserName.text = user.fullName
+                Glide
+                    .with(root)
+                    .load(user.image)
+                    .centerCrop()
+                    .into(imageUserPhoto)
             }.onFailure {
                 showLongSnackbar("Could not load user data")
             }

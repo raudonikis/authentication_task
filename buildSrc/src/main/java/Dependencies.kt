@@ -11,6 +11,7 @@ object Versions {
 
     //UI
     const val material = "1.3.0"
+    const val glide = "4.12.0"
 
     //DI
     const val dagger = "2.36"
@@ -56,6 +57,7 @@ object Dependencies {
 
     //UI
     const val material = "com.google.android.material:material:${Versions.material}"
+    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
 
     // DI
     const val daggerHilt = "com.google.dagger:hilt-android:${Versions.dagger}"
