@@ -2,7 +2,7 @@ package com.raudonikis.login
 
 import com.haroldadmin.cnradapter.NetworkResponse
 import com.raudonikis.auth.AuthenticationPreferences
-import com.raudonikis.common.Result
+import com.raudonikis.common.Outcome
 import com.raudonikis.common.coroutines.CoroutineDispatcherProvider
 import com.raudonikis.network.AuthenticationApi
 import com.raudonikis.network.login.LoginResponse
@@ -63,7 +63,7 @@ internal class LoginUseCaseTest {
     fun `login, when API Unknown error, returns Failure`() = runBlockingTest {
         //Assemble
         coEvery { authenticationApi.login(any(), any()) } returns NetworkResponse.UnknownError(Throwable())
-        val expectedResult = Result.Failure()
+        val expectedResult = Outcome.Failure()
         //Act
         val result = sut.login(username, password)
         //Assert
@@ -74,7 +74,7 @@ internal class LoginUseCaseTest {
     fun `login, when API Network error, returns Failure`() = runBlockingTest {
         //Assemble
         coEvery { authenticationApi.login(any(), any()) } returns NetworkResponse.NetworkError(IOException())
-        val expectedResult = Result.Failure()
+        val expectedResult = Outcome.Failure()
         //Act
         val result = sut.login(username, password)
         //Assert
@@ -88,7 +88,7 @@ internal class LoginUseCaseTest {
             code = 500,
             body = null
         )
-        val expectedResult = Result.Failure()
+        val expectedResult = Outcome.Failure()
         //Act
         val result = sut.login(username, password)
         //Assert
@@ -105,7 +105,7 @@ internal class LoginUseCaseTest {
             body = response,
             code = 200,
         )
-        val expectedResult = Result.Success(Unit)
+        val expectedResult = Outcome.Success(Unit)
         //Act
         val result = sut.login(username, password)
         //Assert

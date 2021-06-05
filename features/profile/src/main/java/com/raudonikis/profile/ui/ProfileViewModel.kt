@@ -3,7 +3,7 @@ package com.raudonikis.profile.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.raudonikis.auth.AuthenticationPreferences
-import com.raudonikis.common.Result
+import com.raudonikis.common.Outcome
 import com.raudonikis.profile.user.User
 import com.raudonikis.navigation.NavigationDispatcher
 import com.raudonikis.navigation.NavigationGraph
@@ -21,12 +21,12 @@ class ProfileViewModel @Inject constructor(
     private val getUserUseCase: GetUserUseCase,
 ) : ViewModel() {
 
-    private val _user: MutableStateFlow<Result<User>> = MutableStateFlow(Result.Loading)
+    private val _user: MutableStateFlow<Outcome<User>> = MutableStateFlow(Outcome.Loading)
 
     /**
      * Observables
      */
-    val user: StateFlow<Result<User>> = _user
+    val user: StateFlow<Outcome<User>> = _user
 
     /**
      * On init, get current user data

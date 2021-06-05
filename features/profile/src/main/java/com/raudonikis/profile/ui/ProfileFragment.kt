@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
-import com.raudonikis.common.Result
+import com.raudonikis.common.Outcome
 import com.raudonikis.common_ui.showIf
 import com.raudonikis.common_ui.showLongSnackbar
 import com.raudonikis.profile.R
@@ -59,9 +59,9 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         }
     }
 
-    private fun onUserUpdate(userUpdate: Result<User>) {
+    private fun onUserUpdate(userUpdate: Outcome<User>) {
         binding.apply {
-            progressUser.showIf { userUpdate is Result.Loading }
+            progressUser.showIf { userUpdate is Outcome.Loading }
             userUpdate.onSuccess { user ->
                 textAddress.text = user.address
                 textPhone.text = user.phone

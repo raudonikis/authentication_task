@@ -1,7 +1,7 @@
 package com.raudonikis.profile.user
 
 import com.haroldadmin.cnradapter.NetworkResponse
-import com.raudonikis.common.Result
+import com.raudonikis.common.Outcome
 import com.raudonikis.common.coroutines.CoroutineDispatcherProvider
 import com.raudonikis.network.AuthenticationApi
 import com.raudonikis.network.user.UserResponse
@@ -55,7 +55,7 @@ internal class GetUserUseCaseTest {
     fun `getUser, when API Unknown error, returns Failure`() = runBlockingTest {
         //Assemble
         coEvery { authenticationApi.getUser() } returns NetworkResponse.UnknownError(Throwable())
-        val expectedResult = Result.Failure()
+        val expectedResult = Outcome.Failure()
         //Act
         val result = sut.getUser()
         //Assert
@@ -66,7 +66,7 @@ internal class GetUserUseCaseTest {
     fun `getUser, when API Network error, returns Failure`() = runBlockingTest {
         //Assemble
         coEvery { authenticationApi.getUser() } returns NetworkResponse.NetworkError(IOException())
-        val expectedResult = Result.Failure()
+        val expectedResult = Outcome.Failure()
         //Act
         val result = sut.getUser()
         //Assert
@@ -80,7 +80,7 @@ internal class GetUserUseCaseTest {
             code = 500,
             body = null
         )
-        val expectedResult = Result.Failure()
+        val expectedResult = Outcome.Failure()
         //Act
         val result = sut.getUser()
         //Assert
@@ -95,7 +95,7 @@ internal class GetUserUseCaseTest {
             body = response,
             code = 200,
         )
-        val expectedResult = Result.Success(UserMapper.fromUserResponse(response))
+        val expectedResult = Outcome.Success(UserMapper.fromUserResponse(response))
         //Act
         val result = sut.getUser()
         //Assert

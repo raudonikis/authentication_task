@@ -2,7 +2,7 @@ package com.raudonikis.login
 
 import com.haroldadmin.cnradapter.NetworkResponse
 import com.raudonikis.auth.AuthenticationPreferences
-import com.raudonikis.common.Result
+import com.raudonikis.common.Outcome
 import com.raudonikis.common.coroutines.CoroutineDispatcherProvider
 import com.raudonikis.network.AuthenticationApi
 import kotlinx.coroutines.withContext
@@ -14,16 +14,16 @@ class LoginUseCase @Inject constructor(
     private val authenticationPreferences: AuthenticationPreferences,
 ) {
 
-    suspend fun login(username: String, password: String): Result<Unit> {
+    suspend fun login(username: String, password: String): Outcome<Unit> {
         return withContext(dispatcherProvider.ioDispatcher) {
             when (val result = authenticationApi.login(username, password)) {
                 is NetworkResponse.Success -> {
                     authenticationPreferences.accessToken = result.body.accessToken
                     authenticationPreferences.refreshToken = result.body.refreshToken
-                    return@withContext Result.Success(Unit)
+                    return@withContext Outcome.Success(Unit)
                 }
                 else -> {
-                    return@withContext Result.Failure()
+                    return@withContext Outcome.Failure()
                 }
             }
         }
