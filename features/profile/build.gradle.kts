@@ -5,6 +5,7 @@ plugins {
 }
 
 dependencies {
+    implementation(project(Modules.navigation))
     implementation(Dependencies.kotlin)
     //DI
     implementation(Dependencies.daggerHilt)

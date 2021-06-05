@@ -5,8 +5,9 @@ plugins {
 }
 
 dependencies {
-    implementation(project(Modules.navigation))
-    implementation(Dependencies.kotlin)
+    //Navigation
+    api(Dependencies.navigationFragment)
+    api(Dependencies.navigationUi)
     //DI
     implementation(Dependencies.daggerHilt)
     kapt(Dependencies.daggerCompiler)

@@ -14,12 +14,20 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 }
 
 dependencies {
+    //Modules
+    implementation(project(Modules.navigation))
+    implementation(project(Modules.Features.login))
+    implementation(project(Modules.Features.profile))
+
     implementation(Dependencies.kotlin)
     //Androidx
     implementation(Dependencies.androidx)

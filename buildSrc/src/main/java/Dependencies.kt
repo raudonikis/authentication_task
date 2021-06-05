@@ -22,6 +22,9 @@ object Versions {
     const val okHttp = "4.9.0"
     const val networkResponseAdapter = "4.2.1"
 
+    // Navigation
+    const val navigation = "2.3.5"
+
     //Testing
     const val junit = "4.13.2"
 
@@ -39,18 +42,20 @@ object Dependencies {
     //Androidx
     const val androidx = "androidx.core:core-ktx:${Versions.androidx}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
-    const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+    const val constraintLayout =
+        "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
 
     //UI
     const val material = "com.google.android.material:material:${Versions.material}"
 
-
     // DI
     const val daggerHilt = "com.google.dagger:hilt-android:${Versions.dagger}"
     const val daggerCompiler = "com.google.dagger:hilt-android-compiler:${Versions.dagger}"
-    /*const val hiltLifecycle = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltLifecycle}"
-    const val hiltLifecycleCompiler = "androidx.hilt:hilt-compiler:${Versions.hiltAndroidx}"
-    const val hiltNavigation = "androidx.hilt:hilt-navigation-fragment:${Versions.hiltAndroidx}"*/
+
+    // Navigation
+    const val navigationFragment =
+        "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+    const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
 
     // Logging
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
@@ -73,4 +78,10 @@ object Dependencies {
 
 object Modules {
     const val network = ":network"
+    const val navigation = ":navigation"
+
+    object Features {
+        const val login = ":features:login"
+        const val profile = ":features:profile"
+    }
 }
