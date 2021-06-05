@@ -31,16 +31,10 @@ android {
 dependencies {
     //Modules
     implementation(project(Modules.navigation))
+    implementation(project(Modules.common))
     implementation(project(Modules.common_ui))
     implementation(project(Modules.Features.login))
     implementation(project(Modules.Features.profile))
-
-    implementation(Dependencies.kotlin)
-    //Androidx
-    implementation(Dependencies.androidx)
-    implementation(Dependencies.appCompat)
-    //Logging
-    implementation(Dependencies.timber)
     //Testing
     testImplementation(Dependencies.junit)
     //DI

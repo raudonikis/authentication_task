@@ -40,4 +40,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             viewModel.onSubmitClicked()
         }
     }
+
+    private fun setUpObservers() {
+
+    }
 }
