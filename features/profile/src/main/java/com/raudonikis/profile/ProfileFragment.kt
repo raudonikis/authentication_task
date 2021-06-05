@@ -6,8 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import com.raudonikis.common.Result
+import com.raudonikis.common_ui.showLongSnackbar
+import com.raudonikis.data_domain.user.User
 import com.raudonikis.profile.databinding.FragmentProfileBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.onEach
 
 @AndroidEntryPoint
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
@@ -27,6 +33,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setUpObservers()
         setUpListeners()
     }
 
@@ -38,6 +45,26 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     private fun setUpListeners() {
         binding.buttonLogout.setOnClickListener {
             viewModel.onLogoutClicked()
+        }
+    }
+
+    private fun setUpObservers() {
+        lifecycleScope.launchWhenCreated {
+            viewModel.user
+                .onEach { onUserUpdate(it) }
+                .collect()
+        }
+    }
+
+    private fun onUserUpdate(userUpdate: Result<User>) {
+        binding.apply {
+            userUpdate.onSuccess { user ->
+                textAddress.text = user.address
+                textPhone.text = user.phone
+                textUserName.text = user.fullName
+            }.onFailure {
+                showLongSnackbar("Could not load user data")
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.raudonikis.data_domain
+package com.raudonikis.auth
 
 import android.content.SharedPreferences
 import com.auth0.android.jwt.JWT

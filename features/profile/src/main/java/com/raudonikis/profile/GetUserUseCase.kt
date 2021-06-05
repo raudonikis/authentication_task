@@ -1,26 +1,25 @@
-package com.raudonikis.login
+package com.raudonikis.profile
 
 import com.haroldadmin.cnradapter.NetworkResponse
-import com.raudonikis.auth.AuthenticationPreferences
 import com.raudonikis.common.Result
 import com.raudonikis.common.coroutines.CoroutineDispatcherProvider
+import com.raudonikis.data_domain.user.User
+import com.raudonikis.data_domain.user.UserMapper
 import com.raudonikis.network.AuthenticationApi
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class LoginUseCase @Inject constructor(
+class GetUserUseCase @Inject constructor(
     private val authenticationApi: AuthenticationApi,
     private val dispatcherProvider: CoroutineDispatcherProvider,
-    private val authenticationPreferences: AuthenticationPreferences,
 ) {
 
-    suspend fun login(username: String, password: String): Result<Unit> {
+    suspend fun getUser(): Result<User> {
         return withContext(dispatcherProvider.ioDispatcher) {
-            when (val result = authenticationApi.login(username, password)) {
+            when(val result = authenticationApi.getUser()) {
                 is NetworkResponse.Success -> {
-                    authenticationPreferences.accessToken = result.body.accessToken
-                    authenticationPreferences.refreshToken = result.body.refreshToken
-                    return@withContext Result.Success(Unit)
+                    val user = UserMapper.fromUserResponse(result.body)
+                    return@withContext Result.Success(user)
                 }
                 else -> {
                     return@withContext Result.Failure()

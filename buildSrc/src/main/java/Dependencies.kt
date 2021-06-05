@@ -94,6 +94,7 @@ object Modules {
     const val common = ":common"
     const val common_ui = ":common-ui"
     const val data_domain = ":data-domain"
+    const val auth = ":auth"
 
     object Features {
         const val login = ":features:login"

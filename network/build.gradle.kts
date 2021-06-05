@@ -7,6 +7,7 @@ plugins {
 dependencies {
     //Modules
     implementation(project(Modules.common))
+    implementation(project(Modules.auth))
     //Network
     implementation(Dependencies.retrofit)
     implementation(Dependencies.moshi)

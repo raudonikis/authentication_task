@@ -1,7 +1,7 @@
 package com.raudonikis.authentication_task
 
 import androidx.lifecycle.ViewModel
-import com.raudonikis.data_domain.AuthenticationPreferences
+import com.raudonikis.auth.AuthenticationPreferences
 import com.raudonikis.navigation.NavigationDispatcher
 import com.raudonikis.navigation.NavigationGraph
 import dagger.hilt.android.lifecycle.HiltViewModel

@@ -2,6 +2,7 @@ package com.raudonikis.network.di
 
 import com.haroldadmin.cnradapter.NetworkResponseAdapterFactory
 import com.raudonikis.network.AuthenticationApi
+import com.raudonikis.network.AuthenticationApiInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -33,9 +34,11 @@ object NetworkModule {
 
     @Provides
     internal fun provideOkHttpClient(
+        authenticationApiInterceptor: AuthenticationApiInterceptor,
         httpLoggingInterceptor: HttpLoggingInterceptor
     ): OkHttpClient {
         return OkHttpClient.Builder()
+            .addInterceptor(authenticationApiInterceptor)
             .addInterceptor(httpLoggingInterceptor)
             .build()
     }
