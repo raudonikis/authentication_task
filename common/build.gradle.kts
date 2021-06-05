@@ -12,6 +12,7 @@ dependencies {
     //Androidx
     api(Dependencies.androidx)
     api(Dependencies.appCompat)
+    api(Dependencies.preferences)
     //Logging
     api(Dependencies.timber)
     //DI

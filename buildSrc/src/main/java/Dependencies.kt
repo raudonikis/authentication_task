@@ -7,6 +7,7 @@ object Versions {
     const val androidx = "1.5.0"
     const val appCompat = "1.3.0"
     const val constraintLayout = "2.0.4"
+    const val preferences = "1.1.1"
 
     //UI
     const val material = "1.3.0"
@@ -51,6 +52,7 @@ object Dependencies {
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val constraintLayout =
         "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+    const val preferences = "androidx.preference:preference:${Versions.preferences}"
 
     //UI
     const val material = "com.google.android.material:material:${Versions.material}"

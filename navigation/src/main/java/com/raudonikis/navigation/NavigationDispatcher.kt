@@ -9,7 +9,7 @@ import javax.inject.Singleton
 @Singleton
 class NavigationDispatcher @Inject constructor(){
 
-    private val _navigationCommands: Channel<NavigationGraph> = Channel()
+    private val _navigationCommands: Channel<NavigationGraph> = Channel(Channel.BUFFERED)
     val navigationCommands: Flow<NavigationGraph> = _navigationCommands.receiveAsFlow()
 
     fun navigate(command: NavigationGraph) {

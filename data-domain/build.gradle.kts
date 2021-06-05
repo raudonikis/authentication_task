@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     kotlin("android")
+    kotlin("kapt")
 }
 
 dependencies {
@@ -11,4 +12,5 @@ dependencies {
     implementation(Dependencies.jwtToken)
     //DI
     implementation(Dependencies.daggerHilt)
+    kapt(Dependencies.daggerCompiler)
 }
