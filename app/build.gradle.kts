@@ -25,6 +25,7 @@ android {
 dependencies {
     //Modules
     implementation(project(Modules.navigation))
+    implementation(project(Modules.common_ui))
     implementation(project(Modules.Features.login))
     implementation(project(Modules.Features.profile))
 
@@ -32,9 +33,6 @@ dependencies {
     //Androidx
     implementation(Dependencies.androidx)
     implementation(Dependencies.appCompat)
-    //UI
-    implementation(Dependencies.material)
-    implementation(Dependencies.constraintLayout)
     //Logging
     implementation(Dependencies.timber)
     //Testing

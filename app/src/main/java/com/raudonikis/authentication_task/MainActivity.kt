@@ -14,7 +14,7 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     @Inject
-    private lateinit var navigationDispatcher: NavigationDispatcher
+    lateinit var navigationDispatcher: NavigationDispatcher
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

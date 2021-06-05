@@ -83,6 +83,7 @@ object Dependencies {
 object Modules {
     const val network = ":network"
     const val navigation = ":navigation"
+    const val common_ui = ":common-ui"
 
     object Features {
         const val login = ":features:login"
