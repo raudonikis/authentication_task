@@ -10,6 +10,12 @@ object Versions {
     //UI
     const val material = "1.3.0"
 
+    // Network
+    const val retrofit = "2.9.0"
+    const val moshi = "1.12.0"
+    const val okHttp = "4.9.0"
+    const val networkResponseAdapter = "4.2.1"
+
     //Testing
     const val junit = "4.13.2"
 
@@ -31,6 +37,15 @@ object Dependencies {
 
     //UI
     const val material = "com.google.android.material:material:${Versions.material}"
+
+    //Network
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val moshi = "com.squareup.moshi:moshi-kotlin:${Versions.moshi}"
+    const val moshiConverter = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
+    const val moshiAdapters = "com.squareup.moshi:moshi-adapters:${Versions.moshi}"
+    const val okHttpInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"
+    const val networkResponseAdapter =
+        "com.github.haroldadmin:NetworkResponseAdapter:${Versions.networkResponseAdapter}"
 
     //Testing
     const val junit = "junit:junit:${Versions.junit}"
