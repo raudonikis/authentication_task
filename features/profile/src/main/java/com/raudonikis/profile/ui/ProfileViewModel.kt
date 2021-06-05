@@ -1,4 +1,4 @@
-package com.raudonikis.profile
+package com.raudonikis.profile.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

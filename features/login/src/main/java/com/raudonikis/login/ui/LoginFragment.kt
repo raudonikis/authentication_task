@@ -1,4 +1,4 @@
-package com.raudonikis.login
+package com.raudonikis.login.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import com.raudonikis.common_ui.enableIf
 import com.raudonikis.common_ui.showIf
 import com.raudonikis.common_ui.showLongSnackbar
+import com.raudonikis.login.R
 import com.raudonikis.login.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect

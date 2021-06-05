@@ -1,4 +1,4 @@
-package com.raudonikis.login
+package com.raudonikis.login.ui
 
 sealed class LoginEvent {
     object Loading: LoginEvent()

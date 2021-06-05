@@ -19,4 +19,8 @@ dependencies {
     //DI
     implementation(Dependencies.daggerHilt)
     kapt(Dependencies.daggerCompiler)
+    //Testing
+    testImplementation(Dependencies.junit)
+    testImplementation(Dependencies.mockk)
+    testImplementation(Dependencies.coroutinesTest)
 }

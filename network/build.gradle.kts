@@ -9,7 +9,7 @@ dependencies {
     implementation(project(Modules.common))
     implementation(project(Modules.auth))
     //Network
-    implementation(Dependencies.retrofit)
+    api(Dependencies.retrofit)
     implementation(Dependencies.moshi)
     implementation(Dependencies.moshiConverter)
     implementation(Dependencies.moshiAdapters)

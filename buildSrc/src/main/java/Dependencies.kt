@@ -30,6 +30,7 @@ object Versions {
 
     //Testing
     const val junit = "4.13.2"
+    const val mockk = "1.11.0"
 
     //Sdk
     const val buildTools = "30.0.3"
@@ -82,6 +83,8 @@ object Dependencies {
 
     //Testing
     const val junit = "junit:junit:${Versions.junit}"
+    const val mockk = "io.mockk:mockk:${Versions.mockk}"
+    const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
 
     //Plugins
     const val hiltGradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.dagger}"

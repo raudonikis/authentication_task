@@ -1,4 +1,4 @@
-package com.raudonikis.profile
+package com.raudonikis.profile.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.raudonikis.common.Result
 import com.raudonikis.common_ui.showIf
 import com.raudonikis.common_ui.showLongSnackbar
+import com.raudonikis.profile.R
 import com.raudonikis.profile.user.User
 import com.raudonikis.profile.databinding.FragmentProfileBinding
 import dagger.hilt.android.AndroidEntryPoint

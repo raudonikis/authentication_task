@@ -1,7 +1,8 @@
-package com.raudonikis.login
+package com.raudonikis.login.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.raudonikis.login.LoginUseCase
 import com.raudonikis.navigation.NavigationDispatcher
 import com.raudonikis.navigation.NavigationGraph
 import dagger.hilt.android.lifecycle.HiltViewModel
