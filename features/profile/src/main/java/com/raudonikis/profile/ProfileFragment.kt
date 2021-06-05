@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.raudonikis.common.Result
 import com.raudonikis.common_ui.showIf
 import com.raudonikis.common_ui.showLongSnackbar
-import com.raudonikis.data_domain.user.User
+import com.raudonikis.profile.user.User
 import com.raudonikis.profile.databinding.FragmentProfileBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect

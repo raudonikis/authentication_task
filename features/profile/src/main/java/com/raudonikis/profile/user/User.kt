@@ -1,4 +1,4 @@
-package com.raudonikis.data_domain.user
+package com.raudonikis.profile.user
 
 data class User(
     val uuid: String,

@@ -1,10 +1,8 @@
-package com.raudonikis.profile
+package com.raudonikis.profile.user
 
 import com.haroldadmin.cnradapter.NetworkResponse
 import com.raudonikis.common.Result
 import com.raudonikis.common.coroutines.CoroutineDispatcherProvider
-import com.raudonikis.data_domain.user.User
-import com.raudonikis.data_domain.user.UserMapper
 import com.raudonikis.network.AuthenticationApi
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

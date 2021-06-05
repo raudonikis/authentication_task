@@ -15,7 +15,6 @@ dependencies {
     implementation(project(Modules.common))
     implementation(project(Modules.common_ui))
     implementation(project(Modules.auth))
-    implementation(project(Modules.data_domain))
     implementation(project(Modules.network))
     //DI
     implementation(Dependencies.daggerHilt)
