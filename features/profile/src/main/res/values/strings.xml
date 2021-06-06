@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_logout">Logout</string>
+    <string name="error_get_user_generic">Could not load user data</string>
+    <string name="content_description_user_photo">User photo</string>
+</resources>
