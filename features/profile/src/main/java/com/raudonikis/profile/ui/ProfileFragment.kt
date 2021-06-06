@@ -72,7 +72,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                     .centerCrop()
                     .into(imageUserPhoto)
             }.onFailure {
-                showLongSnackbar("Could not load user data")
+                showLongSnackbar(R.string.error_get_user_generic)
             }
         }
     }

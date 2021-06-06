@@ -66,7 +66,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             progressLogin.showIf { event is LoginEvent.Loading }
             buttonSubmit.enableIf { event !is LoginEvent.Loading }
             if (event is LoginEvent.Failure) {
-                showLongSnackbar("Failed to login")
+                showLongSnackbar(R.string.error_login_generic)
             }
         }
     }

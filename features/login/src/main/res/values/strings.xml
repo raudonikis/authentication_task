@@ -3,4 +3,6 @@
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
     <string name="action_submit">Submit</string>
+    <string name="error_login_generic">Failed to login</string>
+    <string name="content_description_logo">Company logo</string>
 </resources>
