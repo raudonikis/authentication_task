@@ -2,6 +2,9 @@ package com.raudonikis.network.user
 
 import com.squareup.moshi.Json
 
+/**
+ * Defines the model for a user response
+ */
 data class UserResponse(
     @Json(name = "uuid")
     val uuid: String,

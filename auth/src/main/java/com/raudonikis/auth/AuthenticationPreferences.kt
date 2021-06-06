@@ -7,6 +7,9 @@ import com.raudonikis.common.put
 import timber.log.Timber
 import javax.inject.Inject
 
+/**
+ * SharedPreferences utility class for authentication data
+ */
 class AuthenticationPreferences @Inject constructor(
     private val sharedPreferences: SharedPreferences,
 ) {

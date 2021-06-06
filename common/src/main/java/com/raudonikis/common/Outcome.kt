@@ -1,5 +1,27 @@
 package com.raudonikis.common
 
+/**
+ * Wrapper for mapping function response state
+ * Usage:
+ * Returning response state ->
+ *
+ * if(failed) {
+ *  return Outcome.Failure("message")
+ * }
+ * if(success) {
+ *  return Outcome.Success(data)
+ * }
+ *
+ * Handling response state ->
+ *
+ * outcome
+ *  .onSuccess { data ->
+ *      //handle success
+ *  }
+ *  .onFailure { message ->
+ *      //handle failure
+ *  }
+ */
 sealed class Outcome<out T> {
 
     data class Success<out T>(val data: T) : Outcome<T>()

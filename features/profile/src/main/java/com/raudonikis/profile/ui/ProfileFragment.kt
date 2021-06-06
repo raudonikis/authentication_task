@@ -25,6 +25,9 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
 
+    /**
+     * Lifecycle hooks
+     */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -45,6 +48,9 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         _binding = null
     }
 
+    /**
+     * Set up
+     */
     private fun setUpListeners() {
         binding.buttonLogout.setOnClickListener {
             viewModel.onLogoutClicked()
@@ -59,21 +65,13 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         }
     }
 
+    /**
+     * Events
+     */
     private fun onUserUpdate(userUpdate: Outcome<User>) {
-        binding.apply {
-            progressUser.showIf { userUpdate is Outcome.Loading }
-            userUpdate.onSuccess { user ->
-                textAddress.text = user.address
-                textPhone.text = user.phone
-                textUserName.text = user.fullName
-                Glide
-                    .with(root)
-                    .load(user.image)
-                    .centerCrop()
-                    .into(imageUserPhoto)
-            }.onFailure {
-                showLongSnackbar(R.string.error_get_user_generic)
-            }
+        binding.bindUser(userUpdate)
+        userUpdate.onFailure {
+            showLongSnackbar(R.string.error_get_user_generic)
         }
     }
 }

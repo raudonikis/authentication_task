@@ -10,6 +10,9 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+/**
+ * Dagger module for shared preferences
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 object PreferencesModule {

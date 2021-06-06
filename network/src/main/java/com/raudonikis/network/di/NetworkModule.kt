@@ -13,6 +13,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
+/**
+ * Dagger module for networking dependencies
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {

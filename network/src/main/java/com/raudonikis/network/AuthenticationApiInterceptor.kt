@@ -6,6 +6,10 @@ import okhttp3.Request
 import okhttp3.Response
 import javax.inject.Inject
 
+/**
+ * Interceptor for [AuthenticationApi]
+ * Adds authorization header to every request
+ */
 internal class AuthenticationApiInterceptor @Inject constructor(
     private val authenticationPreferences: AuthenticationPreferences,
 ) : Interceptor {

@@ -8,6 +8,9 @@ import com.raudonikis.network.AuthenticationApi
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
+/**
+ * Use case for user login
+ */
 class LoginUseCase @Inject constructor(
     private val authenticationApi: AuthenticationApi,
     private val dispatcherProvider: CoroutineDispatcherProvider,

@@ -8,6 +8,9 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.converter.moshi.MoshiConverterFactory
 
+/**
+ * Dagger module for serialization dependencies
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 object SerializationModule {

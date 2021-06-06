@@ -5,6 +5,9 @@ import com.raudonikis.network.login.LoginResponse
 import com.raudonikis.network.user.UserResponse
 import retrofit2.http.*
 
+/**
+ * Api for authentication and user endpoints
+ */
 interface AuthenticationApi {
 
     @FormUrlEncoded
