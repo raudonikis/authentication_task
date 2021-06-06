@@ -12,8 +12,8 @@ An application done for a job interview with authentication.
 ### Screenshots
 
 <p>
-<img src="/pictures/login_screen.png" width="50%"/>
-<img src="/pictures/profile_screen.png" width="50%"/>
+<img src="/pictures/login_screen.png" width="49%"/>
+<img src="/pictures/profile_screen.png" width="49%"/>
 </p>
 
 ## Tech stack
