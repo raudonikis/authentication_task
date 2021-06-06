@@ -33,7 +33,7 @@ An application done for a job interview with authentication.
 - [Gradle's Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html) - Gradle’s Kotlin DSL is an alternative syntax to the Groovy DSL with an enhanced editing experience.
 - [buildSrc](https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#sec:build_sources) - a special module within the project to manage dependencies.
 
-For more information about used dependencies, see [this](buildsrc/src/main/java/Dependencies.kt) file.
+For more information about used dependencies, see [this](buildSrc/src/main/java/Dependencies.kt) file.
 
 ## Project structure
 
