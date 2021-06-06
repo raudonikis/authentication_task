@@ -9,6 +9,13 @@ An application done for a job interview with authentication.
 * User can logout from the application;
 * If the user is logged in, user is redirected to the profile upon opening the application.
 
+### Screenshots
+
+<p>
+<img src="/pictures/login_screen.png" width="50%"/>
+<img src="/pictures/profile_screen.png" width="50%"/>
+</p>
+
 ## Tech stack
 
 - [Kotlin](https://kotlinlang.org/) - official programming language for Android.
