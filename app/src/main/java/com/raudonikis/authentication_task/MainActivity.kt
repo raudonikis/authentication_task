@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setUpNavigation()
+
     }
 
     private fun setUpNavigation() {
